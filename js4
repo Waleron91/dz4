@@ -1,0 +1,82 @@
+// 1. Решить у = -2,4x2+5x-3 В диапазоне от -2 до 2 с шагом 0,5
+
+for (let x = -2; x <= 2; x += 0.5){
+    let y = -2.4 * Math.pow (x,2) + 5 * x - 3;
+    console.log ("Для x = ", x, ": y = ", y.toFixed(1));
+}
+
+// 2 Какой будет результат?
+
+/* Операция AND (&&, логическое И, логическое умножение) имеет приоритет выше, выполняется первее, чем операция OR (||, логическое ИЛИ, логическое сложение)
+Условно true = 1, false = 0. Сопоставляя эти факты, получаем следующее: */
+var a = true, b = true, c = false;
+console.log("a and b and c = ", a && b && c);
+console.log("a or b or c = ", a || b || c );
+console.log("a and b or c = ", a && b || c );
+console.log("a or b and c = ", a || b && c);
+console.log("not a = ", !a);
+console.log("not a and not b = ", !a && !b);
+
+
+/*3 Вывести геометрической узор из * (ислользовать циклы и посимвольный вывод)
+***********
+*----*----*
+*----*----*
+*----*----*
+*----*----*
+***********
+*/
+
+var pic = "";
+
+
+/* Представили как двухмерный массив: если это первая и последняя строчка,
+или если это 1, 6, 11 символ в строчке, то печатаем звёздочку*/
+
+for (let i = 0; i < 6; i++){
+    for (let j = 0; j < 11; j++){
+        if (i % 5 == 0 || j % 5 == 0) pic += '*'; 
+        else pic += '_';
+    }
+
+    pic += '\n';
+}
+
+console.log(pic);
+
+
+// 5 Объединить два массива в один и отсортировать
+
+var arr1 = [34,45,97], arr2 = [4,556,74,5];
+var arr = arr1.concat(arr2);
+
+arr.sort(function(a, b) {
+  return a - b;
+});
+
+console.log(arr);
+
+//7. Вывести массив первых букв предложения
+
+var str = "Сделал что смог и то со скрипом сложно сложно сложно!!!";
+var arrayStr = str.split(' ');
+var resultArray = new Array(arrayStr.length);
+for (let i = 0; i < resultArray.length; i++){
+    resultArray[i] = arrayStr[i][0];
+}
+
+console.log(resultArray);
+
+
+//8 Создайте функцию-конструктор Книга. Выведите созданные объекты
+
+function Book(title, author, year){
+    this.title = title;
+    this.author = author;
+    this.year = year;
+}
+
+var book = new Book ("Пикник на обочине", "Аркадий и Борис Стругацкие", 1972);
+
+console.log(book);
+console.log(book.title);
